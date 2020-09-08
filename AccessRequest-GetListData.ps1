@@ -6,7 +6,7 @@ Param(
 )
 
 $ListName = "AccessRequest"
-$CSVFields=@("Title","StartHour","EndHour","FloorID","Status","VisitorCount","EntryDate","EntryDateID","EmployeeName","EmployeeEmail","ManagerLogin","ManagerName","ManagerEmail","EquipmentEnglishText","EquipmentFrenchText","ReasonEnglishText","ReasonFrenchText","ReasonDetail","BuildingID");
+$CSVFields=@("Title","StartHour","EndHour","FloorID","Status","VisitorCount","EntryDate","EntryDateID","EmployeeLogin","EmployeeName","EmployeeEmail","ManagerLogin","ManagerName","ManagerEmail","EquipmentEnglishText","EquipmentFrenchText","ReasonEnglishText","ReasonFrenchText","ReasonDetail","BuildingID");
 
 ## Export List to CSV ##
 function ExportList
