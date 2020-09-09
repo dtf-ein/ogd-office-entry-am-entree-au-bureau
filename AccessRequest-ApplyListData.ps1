@@ -19,22 +19,15 @@ $CSVData = Import-Csv -Path ($CSVFolder + $ListName + ".csv") -header "Title","S
 Connect-PnPOnline -Url $SiteUrl -UseWebLogin
 
 #Iterate through each Row in the CSV and import data to SharePoint Online List
-$count = 0
 foreach ($Row in $CSVData)
 {
 	if ($Row.Title -ne "Title")
 	{
-
-        # Randomize the request details
-        $StartHour = Get-Random -Minimum 9 -Maximum 12
-        $EndHour = Get-Random -Minimum 13 -Maximum 17
-        $EntryDate = (Get-Date).AddDays(++$count)
-
 		Add-PnPListItem -List $ListName -Values @{"Title" = $([guid]::NewGuid().toString())
-                            "StartHour" = $StartHour
-                            "EndHour" = $EndHour
-                            "EntryDate" = $EntryDate.toString("yyyy-MM-dd hh:mm:ss tt")
-                            "EntryDateID" = $EntryDate.toString("yyyyMMdd")
+                            "StartHour" = $($Row.StartHour)
+                            "EndHour" = $($Row.EndHour)
+                            "EntryDate" = $($Row.EntryDate)
+                            "EntryDateID" = $($Row.EntryDateID)
                             "FloorID" = $($Row.FloorID)
                             "Status" = $($Row.Status)
                             "VisitorCount" = $($Row.VisitorCount)
