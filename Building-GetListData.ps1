@@ -1,4 +1,5 @@
-#Config Variables
+# Export all Building list items to an AccessRequest.csv file.
+# These can then be imported using ./Building-ApplyListData.ps1.
 
 Param(
     [Parameter(Mandatory=$True, HelpMessage="URL of the SharePoint site that contains the list: https://someurl.ca")]

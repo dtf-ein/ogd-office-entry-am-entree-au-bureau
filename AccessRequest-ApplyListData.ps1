@@ -1,4 +1,4 @@
-#Config Variables
+# Load an AccessRequest.csv that was created by ./AccessRequest-GetListData.ps1
 
 Param(
     [Parameter(Mandatory=$True, HelpMessage="URL of the SharePoint site that contains the list: https://someurl.ca")]

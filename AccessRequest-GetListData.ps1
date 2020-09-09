@@ -1,4 +1,5 @@
-#Config Variables
+# Export all AccessRequest list items to an AccessRequest.csv file.
+# These can then be imported using ./AccessRequest-ApplyListData.ps1.
 
 Param(
     [Parameter(Mandatory=$True, HelpMessage="URL of the SharePoint site that contains the list: https://someurl.ca")]
