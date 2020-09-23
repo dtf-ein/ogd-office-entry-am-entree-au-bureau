@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
-  <pnp:Templates ID="CONTAINER-TEMPLATE-D4ABE8F80AC54E27A5CD9DB7FEFB409E">
-    <pnp:ProvisioningTemplate ID="TEMPLATE-D4ABE8F80AC54E27A5CD9DB7FEFB409E" Version="1" BaseSiteTemplate="STS#3" Scope="Web">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.25.2009.1, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-A93BA13FD227419CA13D0F03224953E5">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-A93BA13FD227419CA13D0F03224953E5" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
       <pnp:Lists>
         <pnp:ListInstance Title="AccessRequest" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/AccessRequest" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/AccessRequest/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/AccessRequest/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/AccessRequest/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -9,7 +10,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{C48722D2-8D89-42AA-9E8B-86707CA7C1D9}" DefaultView="TRUE" Type="GRID" DisplayName="All Items" Url="{site}/Lists/AccessRequest/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{C79C2168-1403-4161-A264-769466D316AD}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/AccessRequest/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -36,9 +37,11 @@
                 <FieldRef Name="ReasonEnglishText" />
                 <FieldRef Name="ReasonFrenchText" />
                 <FieldRef Name="ReasonDetail" />
+                <FieldRef Name="BuildingID" />
               </ViewFields>
               <RowLimit Paged="TRUE">30</RowLimit>
               <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
             </View>
           </pnp:Views>
           <pnp:Fields>
@@ -48,7 +51,7 @@
             <Field Type="Text" DisplayName="Status" Required="FALSE" ID="{ff3d5a04-0cce-4c52-8a84-3c481626ca17}" SourceID="{{listid:AccessRequest}}" StaticName="Status" Name="Status" ColName="nvarchar5" RowOrdinal="0" Indexed="TRUE" Version="1" />
             <Field Type="Number" DisplayName="VisitorCount" Required="FALSE" Percentage="FALSE" ID="{83945560-e49a-4b29-9bc0-abb1455ddf92}" SourceID="{{listid:AccessRequest}}" StaticName="VisitorCount" Name="VisitorCount" ColName="float3" RowOrdinal="0" />
             <Field Type="DateTime" DisplayName="EntryDate" Required="FALSE" Format="DateOnly" ID="{72a44874-9ece-4ac9-8906-0f76e8adc61e}" SourceID="{{listid:AccessRequest}}" StaticName="EntryDate" Name="EntryDate" ColName="datetime1" RowOrdinal="0" />
-            <Field Type="Number" DisplayName="EntryDateID" Required="FALSE" Percentage="FALSE" ID="{5bdd476e-d90e-46a8-b4d8-c8e9de5c1d9b}" SourceID="{{listid:AccessRequest}}" StaticName="EntryDateID" Name="EntryDateID" ColName="float4" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="EntryDateID" Required="FALSE" Percentage="FALSE" ID="{5bdd476e-d90e-46a8-b4d8-c8e9de5c1d9b}" SourceID="{{listid:AccessRequest}}" StaticName="EntryDateID" Name="EntryDateID" ColName="float4" RowOrdinal="0" Indexed="TRUE" Version="1" />
             <Field Type="Text" DisplayName="EmployeeLogin" Required="FALSE" ID="{acea44c9-506d-44d9-837a-796c07d65f2b}" SourceID="{{listid:AccessRequest}}" StaticName="EmployeeLogin" Name="EmployeeLogin" ColName="nvarchar6" RowOrdinal="0" Indexed="TRUE" Version="1" />
             <Field Type="Text" DisplayName="EmployeeName" Required="FALSE" ID="{a204b602-5443-4236-a49f-1bbb47215457}" SourceID="{{listid:AccessRequest}}" StaticName="EmployeeName" Name="EmployeeName" ColName="nvarchar7" RowOrdinal="0" />
             <Field Type="Text" DisplayName="EmployeeEmail" Required="FALSE" ID="{1d7f2f41-979f-4de5-b68d-8a2c4aed4a46}" SourceID="{{listid:AccessRequest}}" StaticName="EmployeeEmail" Name="EmployeeEmail" ColName="nvarchar8" RowOrdinal="0" />
@@ -60,7 +63,15 @@
             <Field Type="Text" DisplayName="ReasonEnglishText" Required="FALSE" ID="{c569d3a5-2c7c-4750-b7e9-f92bec4bd0b4}" SourceID="{{listid:AccessRequest}}" StaticName="ReasonEnglishText" Name="ReasonEnglishText" ColName="nvarchar12" RowOrdinal="0" />
             <Field Type="Text" DisplayName="ReasonFrenchText" Required="FALSE" ID="{973fcfd2-cbfd-4b63-babe-39f13ec76265}" SourceID="{{listid:AccessRequest}}" StaticName="ReasonFrenchText" Name="ReasonFrenchText" ColName="nvarchar13" RowOrdinal="0" />
             <Field Type="Note" DisplayName="ReasonDetail" Required="FALSE" RichText="TRUE" ID="{e98c8d54-ce36-4dc4-9539-038e6f5c8989}" SourceID="{{listid:AccessRequest}}" StaticName="ReasonDetail" Name="ReasonDetail" ColName="ntext4" RowOrdinal="0" />
+            <Field DisplayName="BuildingID" Format="Dropdown" MaxLength="255" Name="BuildingID" Title="BuildingID" Type="Text" ID="{3cc6faf2-cd37-465d-84d2-775c61533ccd}" SourceID="{{listid:AccessRequest}}" StaticName="BuildingID" ColName="nvarchar14" RowOrdinal="0" />
           </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Building" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Building" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Building/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Building/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Building/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -68,7 +79,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{A9AA5E11-A9ED-44AD-8A99-260A31C17F0D}" DefaultView="TRUE" Type="GRID" DisplayName="All Items" Url="{site}/Lists/Building/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{2091C5BB-20CB-423A-9B6C-522B3BA80584}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Building/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -106,6 +117,13 @@
             <Field Type="Number" DisplayName="TimeZoneOffset" Required="FALSE" Percentage="FALSE" ID="{5fd60882-4697-48cb-88e3-c97650f5d120}" SourceID="{{listid:Building}}" StaticName="TimeZoneOffset" Name="TimeZoneOffset" ColName="float2" RowOrdinal="0" />
             <Field Name="Deleted" FromBaseType="FALSE" Type="DateTime" DisplayName="Deleted" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" ID="{a68901d9-40aa-443f-8562-3b7b9620f5ea}" Version="1" StaticName="Deleted" SourceID="{{listid:Building}}" ColName="datetime1" RowOrdinal="0" />
           </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Floor" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Floor" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Floor/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Floor/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Floor/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -113,7 +131,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{5D4CBF61-6965-4860-9BE7-84CC95125742}" DefaultView="TRUE" Type="GRID" DisplayName="All Items" Url="{site}/Lists/Floor/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{6AEE61E3-6AB3-4E7A-8099-883B65C07D8D}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Floor/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -138,7 +156,7 @@
             </View>
           </pnp:Views>
           <pnp:Fields>
-            <Field Type="Text" DisplayName="BuildingID" Required="FALSE" ID="{9dba2490-d2c4-4a13-ac5b-17dead2c954c}" SourceID="{{listid:Floor}}" StaticName="BuildingID" Name="BuildingID" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="BuildingID" Required="FALSE" ID="{9dba2490-d2c4-4a13-ac5b-17dead2c954c}" SourceID="{{listid:Floor}}" StaticName="BuildingID" Name="BuildingID" ColName="nvarchar4" RowOrdinal="0" Indexed="TRUE" Version="1" />
             <Field Type="Text" DisplayName="FloorEnglishText" Required="FALSE" ID="{f386b0a6-4fdd-4d3a-bef2-923cf06ea026}" SourceID="{{listid:Floor}}" StaticName="FloorEnglishText" Name="FloorEnglishText" ColName="nvarchar5" RowOrdinal="0" />
             <Field Type="Text" DisplayName="FloorFrenchText" Required="FALSE" ID="{81a3c234-8092-4296-b0b6-2281aa93dfcf}" SourceID="{{listid:Floor}}" StaticName="FloorFrenchText" Name="FloorFrenchText" ColName="nvarchar6" RowOrdinal="0" />
             <Field Type="Text" DisplayName="FloorSortOrder" Required="FALSE" ID="{068c6bda-957b-4829-98e3-fd27b5f18f06}" SourceID="{{listid:Floor}}" StaticName="FloorSortOrder" Name="FloorSortOrder" ColName="nvarchar7" RowOrdinal="0" />
@@ -151,6 +169,13 @@
             <Field Type="Text" DisplayName="ChangeReason" Required="FALSE" ID="{f1ea932e-ef9a-4dec-9b9d-0183ca800774}" SourceID="{{listid:Floor}}" StaticName="ChangeReason" Name="ChangeReason" ColName="nvarchar8" RowOrdinal="0" />
             <Field Name="Deleted" FromBaseType="FALSE" Type="DateTime" DisplayName="Deleted" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" FriendlyDisplayFormat="Disabled" ID="{20869171-3105-47e5-a6e7-7d1f0c7e52e4}" Version="1" StaticName="Deleted" SourceID="{{listid:Floor}}" ColName="datetime1" RowOrdinal="0" />
           </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
         <pnp:ListInstance Title="UserSetting" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/UserSetting" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/UserSetting/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/UserSetting/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/UserSetting/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -158,7 +183,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{14B3C71E-B742-441F-8C1C-629D352F195B}" DefaultView="TRUE" Type="GRID" DisplayName="All Items" Url="{site}/Lists/UserSetting/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{376B266A-761F-4937-840D-488D709B6E46}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/UserSetting/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -180,6 +205,13 @@
             <Field Type="DateTime" DisplayName="AgreedToHealthSafety" Required="FALSE" Format="DateTime" ID="{dc2287d4-179d-4e9a-a014-ea62b9c47790}" SourceID="{{listid:UserSetting}}" StaticName="AgreedToHealthSafety" Name="AgreedToHealthSafety" ColName="datetime2" RowOrdinal="0" />
             <Field Type="Text" DisplayName="ManagerLogin" Required="FALSE" ID="{071778f2-e53c-4a5b-83b6-c9d506304000}" SourceID="{{listid:UserSetting}}" StaticName="ManagerLogin" Name="ManagerLogin" ColName="nvarchar4" RowOrdinal="0" />
           </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
         <pnp:ListInstance Title="VisitorLog" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/VisitorLog" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/VisitorLog/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/VisitorLog/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/VisitorLog/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -187,7 +219,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{04CFD351-06BC-47A7-BCC0-57F011938273}" DefaultView="TRUE" Type="GRID" DisplayName="All Items" Url="{site}/Lists/VisitorLog/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{3ABDCA27-4042-4D3E-87EA-93392FB57971}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/VisitorLog/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -211,6 +243,13 @@
             <Field Type="Text" DisplayName="VisitorEmail" Required="FALSE" ID="{85000180-8ea3-438d-8545-b455de2b50d4}" SourceID="{{listid:VisitorLog}}" StaticName="VisitorEmail" Name="VisitorEmail" ColName="nvarchar6" RowOrdinal="0" />
             <Field Type="Text" DisplayName="VisitorPhone" Required="FALSE" ID="{9097c47c-b84c-4be0-a544-c5db883e3c21}" SourceID="{{listid:VisitorLog}}" StaticName="VisitorPhone" Name="VisitorPhone" ColName="nvarchar7" RowOrdinal="0" />
           </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
       </pnp:Lists>
     </pnp:ProvisioningTemplate>
