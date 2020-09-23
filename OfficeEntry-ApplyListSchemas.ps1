@@ -1,5 +1,3 @@
-Import-Module SharePointPnPPowerShellOnline
-
 #Config Variables
 
 Param(
