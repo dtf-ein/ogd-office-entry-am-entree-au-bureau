@@ -5,7 +5,7 @@ Param(
     [string]$SiteURL
 )
 
-$ListNames = @("AccessRequest", "Building", "Floor", "UserSetting", "VisitorLog")
+$ListNames = @("AccessRequest", "Building", "Floor", "UserSetting", "VisitorLog", "TestResults")
 $ListsOutputFile = ".\OfficeEntryListSchemas.xml"
 
 #Connect to PNP Online
