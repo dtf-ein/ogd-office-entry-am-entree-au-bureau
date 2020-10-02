@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
   <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.25.2009.1, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
-  <pnp:Templates ID="CONTAINER-TEMPLATE-744838174B65495C85424DA2EA8F78AB">
-    <pnp:ProvisioningTemplate ID="TEMPLATE-744838174B65495C85424DA2EA8F78AB" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+  <pnp:Templates ID="CONTAINER-TEMPLATE-6BE1DB4722AD4BEE97F929FE3E815B44">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-6BE1DB4722AD4BEE97F929FE3E815B44" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
       <pnp:Lists>
         <pnp:ListInstance Title="AccessRequest" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/AccessRequest" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/AccessRequest/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/AccessRequest/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/AccessRequest/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -10,7 +10,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{C79C2168-1403-4161-A264-769466D316AD}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/AccessRequest/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{6D179E71-E36A-41E8-B937-F6431DDE1F55}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/AccessRequest/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query />
               <ViewFields>
                 <FieldRef Name="DocIcon" />
@@ -41,61 +41,6 @@
               <CustomFormatter />
               <ViewData />
             </View>
-            <View Name="{D36CB9ED-EEE9-4E0B-9D8A-BE85D95459B2}" Type="HTML" DisplayName="By building" Url="{site}/Lists/AccessRequest/By building.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
-              <Query>
-                <GroupBy Collapse="TRUE" GroupLimit="30">
-                  <FieldRef Name="BuildingID" />
-                  <FieldRef Name="FloorID" />
-                </GroupBy>
-                <OrderBy>
-                  <FieldRef Name="EntryDate" />
-                  <FieldRef Name="EmployeeEmail" />
-                </OrderBy>
-              </Query>
-              <ViewFields>
-                <FieldRef Name="StartHour" />
-                <FieldRef Name="EndHour" />
-                <FieldRef Name="FloorID" />
-                <FieldRef Name="Status" />
-                <FieldRef Name="VisitorCount" />
-                <FieldRef Name="EntryDate" />
-                <FieldRef Name="EmployeeLogin" />
-                <FieldRef Name="ManagerLogin" />
-                <FieldRef Name="ReasonEnglishText" />
-                <FieldRef Name="ReasonFrenchText" />
-                <FieldRef Name="ReasonDetail" />
-                <FieldRef Name="BuildingID" />
-              </ViewFields>
-              <RowLimit Paged="TRUE">30</RowLimit>
-              <Aggregations Value="Off" />
-              <JSLink>clienttemplates.js</JSLink>
-              <ViewData />
-            </View>
-            <View Name="{625B361C-78D1-4E51-8CB2-C9F601381C0E}" Type="HTML" DisplayName="By date" Url="{site}/Lists/AccessRequest/By date.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
-              <Query>
-                <GroupBy Collapse="TRUE" GroupLimit="30">
-                  <FieldRef Name="EntryDate" />
-                </GroupBy>
-              </Query>
-              <ViewFields>
-                <FieldRef Name="StartHour" />
-                <FieldRef Name="EndHour" />
-                <FieldRef Name="FloorID" />
-                <FieldRef Name="Status" />
-                <FieldRef Name="VisitorCount" />
-                <FieldRef Name="EntryDate" />
-                <FieldRef Name="EmployeeLogin" />
-                <FieldRef Name="ManagerLogin" />
-                <FieldRef Name="ReasonEnglishText" />
-                <FieldRef Name="ReasonFrenchText" />
-                <FieldRef Name="ReasonDetail" />
-                <FieldRef Name="BuildingID" />
-              </ViewFields>
-              <RowLimit Paged="TRUE">30</RowLimit>
-              <Aggregations Value="Off" />
-              <JSLink>clienttemplates.js</JSLink>
-              <ViewData />
-            </View>
           </pnp:Views>
           <pnp:Fields>
             <Field Type="Number" DisplayName="StartHour" Required="FALSE" Percentage="FALSE" ID="{81679259-6b4d-4d0c-824a-1a6692737404}" SourceID="{{listid:AccessRequest}}" StaticName="StartHour" Name="StartHour" ColName="float1" RowOrdinal="0" ShowInFiltersPane="Removed" Version="1" />
@@ -121,13 +66,10 @@
           <pnp:Security>
             <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
-              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
-          <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=e88bb19b-1072-48b6-a38e-338d54f2f5b6" ExpiresInDays="1" />
-          </pnp:Webhooks>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Building" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Building" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Building/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Building/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Building/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -135,7 +77,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{2091C5BB-20CB-423A-9B6C-522B3BA80584}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Building/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{E0FBE9B7-3754-46C7-AE0C-20D200F77215}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Building/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -176,12 +118,12 @@
           <pnp:Security>
             <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
-              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
           <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=5d35c9bc-c79d-43fa-a719-0fdfceab8747" ExpiresInDays="1" />
+            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=1d8f899c-a1bb-4107-a664-97f1301e1b37" ExpiresInDays="1" />
           </pnp:Webhooks>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Floor" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Floor" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Floor/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Floor/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Floor/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
@@ -190,7 +132,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{6AEE61E3-6AB3-4E7A-8099-883B65C07D8D}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Floor/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{8C3E40CC-C1F3-4C7C-ABF9-04FDA0E27C47}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Floor/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -231,12 +173,12 @@
           <pnp:Security>
             <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
-              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
           <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=14924ed0-cfa3-40a9-863c-b9bbde54660f" ExpiresInDays="1" />
+            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=19b6f507-a866-4e3c-a07b-8706050db45b" ExpiresInDays="1" />
           </pnp:Webhooks>
         </pnp:ListInstance>
         <pnp:ListInstance Title="TestResults" Description="" DocumentTemplate="" TemplateType="100" Url="Lists/TestResults" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/TestResults/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/TestResults/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/TestResults/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
@@ -245,7 +187,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{14F193A6-6690-4BCC-B711-0731AFA740E1}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/TestResults/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{957C97DE-E5AC-411F-9AA4-F76265027ADC}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/TestResults/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -265,18 +207,19 @@
             </View>
           </pnp:Views>
           <pnp:Fields>
-            <Field Type="Text" DisplayName="TestCaseName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{87709269-304e-47fe-92e7-952c46d025fc}" SourceID="{{listid:TestResults}}" StaticName="TestCaseName" Name="TestCaseName" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="TestCaseName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{87709269-304e-47fe-92e7-952c46d025fc}" SourceID="{{listid:TestResults}}" StaticName="TestCaseName" Name="TestCaseName" ColName="nvarchar4" RowOrdinal="0" />
             <Field DisplayName="TestSuiteName" Format="Dropdown" MaxLength="255" Name="TestSuiteName" Title="TestSuiteName" Type="Text" ID="{91a24cb2-e91b-4498-ba34-b89a0761b7f6}" SourceID="{{listid:TestResults}}" StaticName="TestSuiteName" ColName="nvarchar5" RowOrdinal="0" />
-            <Field Name="StartTime" FromBaseType="FALSE" Type="Text" DisplayName="StartTime" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{201b91c5-6830-417f-94d1-9bff5611aff8}" Version="1" StaticName="StartTime" SourceID="{{listid:TestResults}}" ColName="nvarchar7" RowOrdinal="0" />
-            <Field Name="TestFailCount" FromBaseType="FALSE" Type="Text" DisplayName="Success" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d338d02d-c896-44ad-9cb8-33bc865bede4}" Version="1" StaticName="TestFailCount" SourceID="{{listid:TestResults}}" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Name="StartTime" FromBaseType="FALSE" Type="Text" DisplayName="StartTime" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{201b91c5-6830-417f-94d1-9bff5611aff8}" Version="1" StaticName="StartTime" SourceID="{{listid:TestResults}}" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Name="TestFailCount" FromBaseType="FALSE" Type="Text" DisplayName="Success" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d338d02d-c896-44ad-9cb8-33bc865bede4}" Version="1" StaticName="TestFailCount" SourceID="{{listid:TestResults}}" ColName="nvarchar7" RowOrdinal="0" />
             <Field Type="Note" DisplayName="TestFailureMessage" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" ID="{370c8497-a9b5-40bf-b4a9-292a6ff6b1db}" SourceID="{{listid:TestResults}}" StaticName="TestFailureMessage" Name="TestFailureMessage" ColName="ntext2" RowOrdinal="0" />
           </pnp:Fields>
-          <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canada-001.azure-apim.net/apim/sharepointonline/ontableupdatedhook?r=https%253a%252f%252fprod-11.canadacentral.logic.azure.com%252fworkflows%252f8e0f11e922d245fe9a463aa1c115fd3d%252ftriggers%252fWhen_a_new_item_is_created%252fpaths%252finvoke%253fapi-version%253d2016-06-01%2526sp%253d%25252Ftriggers%25252FWhen_a_new_item_is_created%25252Frun%25252C%25252Ftriggers%25252FWhen_a_new_item_is_created%25252Fread%2526sv%253d1.0%2526sig%253dGDKzKHyzzPM7tCAlGXMDhRW58vubGnU0mrHzGVbnocA" ExpiresInDays="1" />
-            <pnp:Webhook ServerNotificationUrl="https://canada-001.azure-apim.net/apim/sharepointonline/ontableupdatedhook?r=https%253a%252f%252fprod-04.canadacentral.logic.azure.com%252fworkflows%252fed9c7d74496a4194a4a6edd203064176%252ftriggers%252fWhen_a_new_item_is_created%252fpaths%252finvoke%253fapi-version%253d2016-06-01%2526sp%253d%25252Ftriggers%25252FWhen_a_new_item_is_created%25252Frun%25252C%25252Ftriggers%25252FWhen_a_new_item_is_created%25252Fread%2526sv%253d1.0%2526sig%253dp4bHHwupleyZVzGfHwqUXHnSL21UG0oTKsqa35s0M10" ExpiresInDays="1" />
-            <pnp:Webhook ServerNotificationUrl="https://canada-001.azure-apim.net/apim/sharepointonline/ontableupdatedhook?r=https%253a%252f%252fprod-04.canadacentral.logic.azure.com%252fworkflows%252fed9c7d74496a4194a4a6edd203064176%252ftriggers%252fWhen_a_new_test_result_is_created%252fpaths%252finvoke%253fapi-version%253d2016-06-01%2526sp%253d%25252Ftriggers%25252FWhen_a_new_test_result_is_created%25252Frun%25252C%25252Ftriggers%25252FWhen_a_new_test_result_is_created%25252Fread%2526sv%253d1.0%2526sig%253dJ_3VCzJY0d22t7QaC3Dr97YA6Eo23TB5JyH8zGSEvMU" ExpiresInDays="4" />
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=279d5663-04ee-47b2-ab07-600ac5f172fc" ExpiresInDays="1" />
-          </pnp:Webhooks>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
         </pnp:ListInstance>
         <pnp:ListInstance Title="UserSetting" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/UserSetting" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/UserSetting/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/UserSetting/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/UserSetting/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -284,7 +227,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{376B266A-761F-4937-840D-488D709B6E46}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/UserSetting/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{6C592D52-DD7C-476B-9CCF-82B3D778739A}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/UserSetting/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -309,7 +252,7 @@
           <pnp:Security>
             <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
-              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
@@ -320,7 +263,7 @@
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{3ABDCA27-4042-4D3E-87EA-93392FB57971}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/VisitorLog/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+            <View Name="{E63D5658-2981-4979-903C-7708A77A97DB}" DefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/VisitorLog/Allitemsg.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -347,7 +290,7 @@
           <pnp:Security>
             <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
-              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Contribute" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
