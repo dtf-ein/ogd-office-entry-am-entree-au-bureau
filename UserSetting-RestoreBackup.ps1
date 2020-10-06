@@ -1,4 +1,8 @@
 # Load an UserSetting.csv that was created by the Power Automate flow
+# These backups should be in a /Backups document library on the site
+
+# IMPORTANT!!
+# Before running the script, you must remove all .csv colums that aren't part of the Import-Csv call below.
 
 Param(
     [Parameter(Mandatory=$True, HelpMessage="URL of the SharePoint site that contains the list: https://someurl.ca")]
