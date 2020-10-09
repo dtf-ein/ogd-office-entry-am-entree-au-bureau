@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
   <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.25.2009.1, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
-  <pnp:Templates ID="CONTAINER-TEMPLATE-C48E9AEE2BB54281A4F3F0A99EA607D3">
-    <pnp:ProvisioningTemplate ID="TEMPLATE-C48E9AEE2BB54281A4F3F0A99EA607D3" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+  <pnp:Templates ID="CONTAINER-TEMPLATE-FB91C25DF3464188ADE2F2E6B368158D">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-FB91C25DF3464188ADE2F2E6B368158D" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
       <pnp:Lists>
-        <pnp:ListInstance Title="AccessRequest" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/AccessRequest" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/AccessRequest/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/AccessRequest/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/AccessRequest/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="AccessRequest" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/AccessRequest" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="1000" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/AccessRequest/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/AccessRequest/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/AccessRequest/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -73,10 +73,10 @@
             </pnp:BreakRoleInheritance>
           </pnp:Security>
           <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=1543f25c-cee2-4d15-8747-5af49b7f3b78" ExpiresInDays="1" />
+            <pnp:Webhook ServerNotificationUrl="https://canada-001.azure-apim.net/apim/sharepointonline/ontableupdatedhook?r=https%253a%252f%252fprod-04.canadacentral.logic.azure.com%252fworkflows%252f3f52816518a14214b9d0053da4443e2e%252ftriggers%252fWhen_an_existing_item_is_modified%252fpaths%252finvoke%253fapi-version%253d2016-06-01%2526sp%253d%25252Ftriggers%25252FWhen_an_existing_item_is_modified%25252Frun%25252C%25252Ftriggers%25252FWhen_an_existing_item_is_modified%25252Fread%2526sv%253d1.0%2526sig%253d3mLestAltUhqDj8E2BwFLAeNLawsGCElb-NUKNmLcvg" ExpiresInDays="4" />
           </pnp:Webhooks>
         </pnp:ListInstance>
-        <pnp:ListInstance Title="Building" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Building" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Building/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Building/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Building/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="4" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="Building" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Building" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="1000" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Building/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Building/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Building/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="4" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -127,8 +127,11 @@
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=4cd95902-8d7c-4c17-a84d-af5a7a35eddc" ExpiresInDays="1" />
+          </pnp:Webhooks>
         </pnp:ListInstance>
-        <pnp:ListInstance Title="Floor" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Floor" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Floor/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Floor/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Floor/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="4" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="Floor" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/Floor" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="1000" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Floor/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Floor/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Floor/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="4" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -220,7 +223,7 @@
             </pnp:BreakRoleInheritance>
           </pnp:Security>
         </pnp:ListInstance>
-        <pnp:ListInstance Title="UserSetting" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/UserSetting" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/UserSetting/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/UserSetting/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/UserSetting/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="UserSetting" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/UserSetting" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="1000" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/UserSetting/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/UserSetting/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/UserSetting/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -255,8 +258,11 @@
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=90d45790-649d-4d8f-b37f-a7c1b4b224f9" ExpiresInDays="1" />
+          </pnp:Webhooks>
         </pnp:ListInstance>
-        <pnp:ListInstance Title="VisitorLog" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/VisitorLog" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/VisitorLog/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/VisitorLog/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/VisitorLog/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="VisitorLog" Description="" DocumentTemplate="" TemplateType="120" Url="Lists/VisitorLog" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="1000" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-3a1d-41d3-a0ee-651d11570120" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/VisitorLog/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/VisitorLog/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/VisitorLog/NewForm.aspx" ImageUrl="/_layouts/15/images/itdatash.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" WriteSecurity="2" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -293,9 +299,6 @@
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
-          <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://canadaeast1.pushnp.svc.ms/notifications?token=440453dd-ea8e-4af6-ac26-342f7cf0e26e" ExpiresInDays="1" />
-          </pnp:Webhooks>
         </pnp:ListInstance>
       </pnp:Lists>
     </pnp:ProvisioningTemplate>
